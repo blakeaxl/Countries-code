@@ -1,0 +1,832 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f8f8f8;
+  overflow-x: hidden;
+}
+
+/** Header */
+
+.header-list-mobile {
+  display: none;
+}
+
+.hamburguer-menu {
+  display: none;
+}
+
+.toggle-menu {
+  display: none;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 5vw;
+  background-color: #fff;
+  box-shadow: 8px 11px 24px 2px lightgray;
+}
+
+.logo {
+  width: 4vw;
+  margin-left: 2vw;
+}
+
+.header-list {
+  width: 40vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header-link {
+  text-decoration: none;
+}
+
+.header-list li {
+  list-style-type: none;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: gray;
+  font-size: 1.1vw;
+  transition: 0.3s ease;
+}
+
+.nav-item:hover {
+  color: lightgray;
+}
+
+.nav-active {
+  color: lightgray;
+}
+
+/** Basic config */
+
+.section {
+  position: absolute;
+  width: 100vw;
+  top: 10vw;
+  right: 0;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/** React Transitions */
+
+.fade-apper,
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.fade-apper-active,
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/** Home Page */
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-container {
+  width: 90vw;
+  height: 35vw;
+  background-color: white;
+  box-shadow: 8px 11px 24px 2px lightgray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-container h1 {
+  font-size: 4vw;
+  color: #555555;
+  width: 90vw;
+  text-align: center;
+}
+
+.home-container p {
+  color: gray;
+  width: 90vw;
+  font-size: 2vw;
+  text-align: center;
+}
+
+.home-container button {
+  width: 15vw;
+  height: 5vw;
+  font-size: 1.2vw;
+  color: gray;
+  background-color: #fff;
+  border-radius: 1vw;
+  margin-top: 4vw;
+  box-shadow: 8px 11px 24px 2px lightgray;
+  border-color: transparent;
+  cursor: pointer;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.home-container button:hover {
+  background-color: lightgray;
+  color: white;
+}
+
+/** Countries page */
+
+.search-options-container {
+  width: 100vw;
+  height: 5vw;
+  position: relative;
+  top: -2vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-bar {
+  width: 45vw;
+  height: 1vw;
+  padding: 1vw;
+  border-radius: 1vw;
+  border-color: transparent;
+  box-shadow: 8px 11px 24px 2px lightgray;
+  outline: none;
+  background-color: #fff;
+  font-size: 0.8vw;
+  color: gray;
+}
+
+.filter {
+  position: absolute;
+  left: 3vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 8px 11px 24px 2px lightgray;
+  width: 20vw;
+  height: 3.3vw;
+  border-radius: 1vw;
+  background-color: #fff;
+}
+
+.filter h2 {
+  font-size: 0.9vw;
+  font-weight: 400;
+  color: gray;
+}
+
+.options-input {
+  width: 10vw;
+  height: 1.5vw;
+  border-radius: 1vw;
+  border-color: transparent;
+  box-shadow: 8px 11px 24px 2px lightgray;
+  outline: none;
+  font-size: 0.9vw;
+  color: gray;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.countries-container {
+  display: grid;
+  width: 100vw;
+  grid-template-columns: 20vw 20vw 20vw 21vw;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 4vw;
+}
+
+.card-container {
+  width: 20vw;
+  height: 25vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 8px 11px 24px 2px lightgray;
+}
+.flag {
+  width: 10vw;
+}
+
+.decoration-text {
+  text-decoration: none;
+}
+
+.card-title {
+  color: black;
+  width: 10vw;
+  font-size: 1.5vw;
+}
+
+.country-info-list {
+  width: 10vw;
+  padding: 0;
+}
+
+.country-info-list li {
+  list-style-type: none;
+  color: black;
+  font-size: 1vw;
+}
+
+.country-info-list li span {
+  color: gray;
+  font-size: 0.8vw;
+}
+
+.loading {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 30vw;
+}
+
+.loading h2 {
+  color: gray;
+  font-size: 1.2vw;
+  margin-top: 2vw;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-logo {
+  width: 20vw;
+  animation: rotate 4s linear infinite;
+}
+
+.no-countries-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 30vw;
+  transform: translateX(-3.7%);
+}
+
+.no-countries-found img {
+  width: 20vw;
+}
+
+.no-countries-found {
+  font-size: 1.2vw;
+  color: gray;
+  width: 100vw;
+}
+
+/** Favorites */
+
+.favorites-empty {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 30vw;
+}
+
+.favorites-empty img {
+  width: 20vw;
+}
+
+.favorites-empty h2 {
+  font-size: 1.5vw;
+  color: gray;
+  width: 50vw;
+  text-align: center;
+}
+
+/** Country page */
+
+.single-country {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.country-info-container {
+  position: relative;
+  width: 90vw;
+  height: 50vw;
+  margin-bottom: 5vw;
+  background-color: white;
+  box-shadow: 8px 11px 24px 2px lightgray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.country-info-container img {
+  width: 40vw;
+  position: absolute;
+  left: 2vw;
+  top: 2vw;
+}
+
+.country-titles {
+  position: absolute;
+  width: 45vw;
+  right: 2vw;
+  top: -0.3vw;
+  font-size: 1.6vw;
+  color: gray;
+}
+
+.country-titles h3 {
+  font-size: 1.3vw;
+  margin-top: -2vw;
+}
+
+.principal-data {
+  position: absolute;
+  right: 17vw;
+  top: 9vw;
+  width: 30vw;
+  color: gray;
+  font-size: 1.5vw;
+}
+
+.principal-data li {
+  list-style-type: none;
+}
+
+.principal-data li span {
+  color: lightgray;
+  font-size: 1.2vw;
+}
+
+.data-list {
+  position: absolute;
+  right: 17vw;
+  top: 20vw;
+  width: 30vw;
+  color: gray;
+  font-size: 1.5vw;
+}
+
+.data-list li {
+  list-style-type: none;
+}
+
+.data-list li span {
+  color: lightgray;
+  font-size: 1.2vw;
+}
+
+.data-list li ul {
+  position: relative;
+  right: 2.5vw;
+  display: flex;
+  width: 45vw;
+  justify-content: flex-start;
+}
+
+.data-list li ul li {
+  margin: 0.5vw;
+  font-size: 0.8vw;
+}
+
+.final-data {
+  position: absolute;
+  left: 0vw;
+  top: 33vw;
+  width: 30vw;
+  color: gray;
+  font-size: 1.5vw;
+}
+
+.final-data li {
+  list-style-type: none;
+}
+
+.final-data li span {
+  color: lightgray;
+  font-size: 1.2vw;
+}
+
+.final-data li ul {
+  position: relative;
+  right: 2.5vw;
+  display: flex;
+  width: 70vw;
+  justify-content: flex-start;
+}
+
+.final-data li ul li {
+  margin: 0.5vw;
+  font-size: 0.9vw;
+}
+
+.country-buttons {
+  position: absolute;
+  top: 42vw;
+  right: 3vw;
+}
+
+.country-buttons button {
+  width: 15vw;
+  height: 3vw;
+  outline: none;
+  border-color: transparent;
+  box-shadow: 8px 11px 24px 2px lightgray;
+  background-color: #fff;
+  color: gray;
+  font-size: 1vw;
+  cursor: pointer;
+  margin: 2vw;
+  transition: 0.3s ease;
+}
+
+.country-buttons button:hover {
+  background-color: lightgray;
+  color: white;
+}
+
+/** Mobile CSS */
+
+@media (max-width: 1024px) {
+  /** Basic CSS */
+
+  .section {
+    top: 50vmin;
+  }
+
+  /** Mobile Header CSS */
+
+  .header-list {
+    display: none;
+  }
+
+  .header {
+    height: 25vmin;
+  }
+
+  .logo {
+    width: 12vmin;
+    margin-left: 7vmin;
+  }
+
+  .hamburguer-menu {
+    display: flex;
+    width: 7vmin;
+    height: 4vmin;
+    position: absolute;
+    right: 7vmin;
+    z-index: 9;
+  }
+
+  .line {
+    background-color: gray;
+    position: absolute;
+    width: 100%;
+    height: 0.8vmin;
+    border-radius: 1vw;
+    transition: 0.3s ease;
+  }
+
+  .first-line {
+    top: 0%;
+  }
+
+  .second-line {
+    top: 50%;
+  }
+
+  .last-line {
+    top: 100%;
+  }
+
+  .toggle-menu {
+    display: initial;
+    position: absolute;
+    width: 15vmin;
+    height: 15vmin;
+    right: 2.5vmin;
+    z-index: 10;
+    opacity: 0;
+  }
+
+  .toggle-menu:checked ~ .hamburguer-menu .first-line {
+    top: 50%;
+    transform: rotate(45deg);
+  }
+
+  .toggle-menu:checked ~ .hamburguer-menu .second-line {
+    opacity: 0;
+  }
+
+  .toggle-menu:checked ~ .hamburguer-menu .last-line {
+    top: 50%;
+    transform: rotate(-45deg);
+  }
+
+  .header-list-mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 20vmin;
+    width: 100vw;
+    height: 0vmin;
+    background-color: white;
+    box-shadow: 8px 11px 24px 2px lightgray;
+    padding-inline-start: 0;
+    overflow: hidden;
+    z-index: 100;
+    transition: 0.3s ease;
+  }
+
+  .toggle-menu:checked ~ .header-list-mobile {
+    height: 70vmin;
+  }
+
+  .header-list-mobile li {
+    list-style: none;
+    margin: 3vmin;
+  }
+
+  .header-link {
+    text-decoration: none;
+  }
+
+  .nav-item {
+    font-size: 5vmin;
+  }
+
+  /** Mobile Home page */
+
+  .home-container {
+    width: 90vw;
+    height: auto;
+    margin-bottom: 10vmin;
+  }
+
+  .home-container h1 {
+    width: 80vw;
+    font-size: 15vmin;
+  }
+
+  .home-container p {
+    font-size: 7vmin;
+    width: 80vw;
+  }
+
+  .home-container button {
+    font-size: 5vmin;
+    width: 80vw;
+    height: 15vmin;
+    margin: 10vmin;
+  }
+
+  /** Mobile Countries */
+
+  .countries-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-container {
+    width: 90vmin;
+    height: 100vmin;
+  }
+
+  .flag {
+    width: 70vmin;
+  }
+
+  .card-title {
+    font-size: 5vmin;
+    width: 70vmin;
+    text-align: left;
+  }
+
+  .country-info-list {
+    width: 70vmin;
+  }
+
+  .country-info-list li {
+    font-size: 4vmin;
+  }
+
+  .country-info-list li span {
+    font-size: 3.5vmin;
+  }
+
+  .search-options-container {
+    height: 20vmin;
+    top: -20vmin;
+  }
+
+  .search-bar {
+    width: 70vmin;
+    height: 5vmin;
+    border-radius: 3vmin;
+    font-size: 3.3vmin;
+    padding: 3vmin;
+  }
+
+  .filter {
+    width: 70vmin;
+    height: 10vmin;
+    top: 25vmin;
+    left: auto;
+  }
+
+  .filter h2 {
+    font-size: 3vmin;
+  }
+
+  .options-input {
+    width: 40vmin;
+    height: 5vmin;
+    font-size: 3vmin;
+  }
+
+  .no-countries-found {
+    height: auto;
+    transform: translateX(0%);
+  }
+
+  .no-countries-found img {
+    width: 90vmin;
+  }
+
+  .no-countries-found h2 {
+    width: 80vw;
+    font-size: 5vmin;
+    text-align: center;
+  }
+
+  .loading {
+    top: 40vmin;
+  }
+
+  .loading img {
+    width: 40vmin;
+  }
+
+  .loading h2 {
+    width: 80vmin;
+    font-size: 5vmin;
+    text-align: center;
+  }
+
+  /** Mobile Favorites page */
+
+  .favorites-empty {
+    margin-top: 20vmin;
+  }
+
+  .favorites-empty img {
+    width: 45vmin;
+  }
+
+  .favorites-empty h2 {
+    font-size: 4.5vmin;
+    width: 80vmin;
+    text-align: center;
+  }
+
+  /** Mobile Country page */
+
+  .country-info-container {
+    height: auto;
+    width: 90vw;
+    overflow: hidden;
+    padding-top: 10vmin;
+  }
+
+  .country-info-container img {
+    position: static;
+    width: 70vw;
+  }
+
+  .country-titles {
+    position: static;
+    width: 70vw;
+    font-size: 5vmin;
+  }
+
+  .country-titles h3 {
+    width: 70vw;
+    font-size: 4vmin;
+  }
+
+  .principal-data {
+    position: static;
+    width: 70vmin;
+    font-size: 4vmin;
+    padding-inline-start: 0;
+  }
+
+  .principal-data li {
+    list-style-type: none;
+  }
+
+  .principal-data li span {
+    font-size: 3.5vmin;
+  }
+
+  .data-list {
+    position: static;
+    width: 70vw;
+    color: gray;
+    font-size: 4vmin;
+    padding-inline-start: 0;
+  }
+
+  .data-list li {
+    list-style-type: none;
+  }
+
+  .data-list li span {
+    font-size: 3.5vmin;
+  }
+
+  .data-list li ul {
+    position: static;
+    width: 70vw;
+  }
+
+  .data-list li ul li {
+    margin: 0.5vw;
+    font-size: 2.5vmin;
+  }
+
+  .final-data {
+    position: static;
+    width: 70vw;
+    font-size: 4vmin;
+    padding-inline-start: 0;
+  }
+
+  .final-data li {
+    list-style-type: none;
+  }
+
+  .final-data li span {
+    font-size: 2.5vmin;
+  }
+
+  .final-data li ul {
+    position: static;
+    width: 70vw;
+  }
+
+  .final-data li ul li {
+    margin: 0.5vw;
+    font-size: 2.5vmin;
+  }
+
+  .country-buttons {
+    position: static;
+    top: 42vw;
+    right: 3vw;
+  }
+
+  .country-buttons button {
+    width: 85vmin;
+    height: 10vmin;
+    font-size: 4vmin;
+    margin: 3vmin;
+    margin-bottom: 10vmin;
+  }
+
+  .single-country {
+    overflow-x: hidden;
+  }
+}
